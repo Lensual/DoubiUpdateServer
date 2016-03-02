@@ -1,14 +1,14 @@
 <?php
 	//服务器设置
-	$ServerVersion = 0.2; //服务器处理程序版本
+	$ServerVersion = '0.2.1'; //服务器处理程序版本
 	
 	$LastestVersion_Release = '0.1.0.0'; //最后的Release版本
 	$LastestVersion_Beta = '0.1.0.0'; //最后的Beta版本
-	$LastestVersion_Debug = '0.2.1.0'; //最后的Debug版本
+	$LastestVersion_Debug = '0.3.2.0'; //最后的Debug版本
 	
 	$LastestBuild_Release = '0'; //最后的Release Build
 	$LastestBuild_Beta = '0'; //最后的Beta Build
-	$LastestBuild_Debug = '1'; //最后的Debug Build
+	$LastestBuild_Debug = '2'; //最后的Debug Build
 	
 	//处理请求
 	switch (@$_GET['Command']){
@@ -48,12 +48,12 @@
 			break;
 		case 'WhatShouldIdo': //获取更新脚本
 			if (@$_GET['Build']!=$LastestBuild_Debug){
-				echo 'ask(发现新版本V0.2.1.0是否更新？,end);';
+				echo 'ask(发现新版本V0.3.2.0是否更新？,end);';
 				echo 'mkdir(.\doubitemp);';
-				echo 'download(http://update.dreamerstudio.net/update/DoubiLauncher/Download/0.2.0.1/0.2.0.1.exe,.\doubitemp\DoubiLauncher V0.2.0.1.exe);';
-				echo 'move(.\doubitemp\DoubiLauncher V0.2.0.1.exe,.\DoubiLauncher V0.2.0.1.exe);';
+				echo 'download(http://update.dreamerstudio.net/update/DoubiLauncher/Download/0.3.2.0/0.3.2.0.exe,.\doubitemp\DoubiLauncher V0.3.2.0.exe);';
+				echo 'move(.\doubitemp\DoubiLauncher V0.3.2.0.exe,.\DoubiLauncher V0.3.2.0.exe);';
 				echo 'delete(.\doubitemp);';
-				echo 'start(.\DoubiLauncher V0.2.0.1.exe,,false);';
+				echo 'start(.\DoubiLauncher V0.3.2.0.exe,,false);';
 				echo 'deleteme();';
 				echo 'sign(end);';
 			}
